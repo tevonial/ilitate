@@ -1,0 +1,218 @@
+:root {
+    --tab-background: #9b9b9b;
+    --selected-color: #e7e7e7;
+    --border-color: #333333;
+}
+
+.column {
+    padding: 0;
+    border-right: 2px solid var(--border-color);
+}
+
+.flex-content {
+    flex-grow: 1;
+}
+
+.table-horizontal {
+    border-collapse: collapse;
+}
+
+.table-horizontal th {
+    width: 150px
+}
+
+.table-border, .table-border td, .table-border th {
+    border: solid 2px var(--border-color);
+}
+
+table.table-hover tr:hover {
+    cursor:pointer;
+    background-color: var(--tab-background);
+}
+
+.main {
+    position: fixed;
+    min-height: 100%;
+    width: 100%;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+}
+
+.bar {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background: #e1e1e1;
+    border-bottom: 2px solid var(--border-color);
+    overflow: visible;
+}
+
+.child-nav {        /*ul*/
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow: hidden;
+    background-color: var(--border-color);
+    display: table;
+}
+
+.child-nav li {
+    float: left;
+}
+
+.child-nav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 7px 16px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.child-nav li:hover {
+    background-color: #1b6d85;
+}
+
+.content {
+    background-color: var(--selected-color);
+}
+
+.form-border {
+    width: 500px;
+    padding: 6px 10px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 3px solid #ccc;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+}
+
+.form-border:focus:not(button), button.form-border:hover {
+    border: 3px solid #555;
+}
+
+button.form-border {
+    width: auto;
+}
+
+.tabs {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.tabs li {
+    display: block;
+    float: left;
+}
+
+.tabs li:last-child{
+    float:none;
+    overflow:hidden;
+}
+
+.tabs li:last-child a {
+    display: block;
+}
+
+.tabs a {
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px 30px;
+    border-bottom: solid 2px var(--border-color);
+    background-color: var(--tab-background);
+    color: var(--border-color);
+    font-weight: bold;
+}
+
+.tabs li:not(:last-child) a:hover:not(.active) {
+    background-color: var(--selected-color);
+}
+
+.tabs a.active {
+    background-color: var(--selected-color);
+    border-bottom: solid 2px var(--selected-color);
+    border-left: solid 2px var(--border-color);
+    border-right: solid 2px var(--border-color);
+    padding: 10px 28px;
+}
+
+.tabs li:first-child a.active {
+    border-left: solid 2px var(--selected-color);
+}
+
+.vertical-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+.vertical-list li {
+    display: block;
+}
+
+.vertical-list a {
+    display: block;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-bottom: solid 2px var(--border-color);
+    color: var(--border-color);
+}
+
+.vertical-list a:hover:not(.active) {
+    background-color: var(--selected-color);
+}
+
+.vertical-list a.active {
+    background-color: var(--tab-background);
+    padding: 10px 25px;
+    font-weight: bold;
+}
+
+
+.spinner {
+    width: 40px;
+    height: 40px;
+
+    position: relative;
+    margin: 100px auto;
+}
+
+.double-bounce1, .double-bounce2 {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #333;
+    opacity: 0.6;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+    animation: sk-bounce 2.0s infinite ease-in-out;
+}
+
+.double-bounce2 {
+    -webkit-animation-delay: -1.0s;
+    animation-delay: -1.0s;
+}
+
+@-webkit-keyframes sk-bounce {
+    0%, 100% { -webkit-transform: scale(0.0) }
+    50% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes sk-bounce {
+    0%, 100% {
+        transform: scale(0.0);
+        -webkit-transform: scale(0.0);
+    } 50% {
+          transform: scale(1.0);
+          -webkit-transform: scale(1.0);
+      }
+}

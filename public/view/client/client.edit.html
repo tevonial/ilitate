@@ -1,0 +1,36 @@
+<div class="col-md-10 content">
+    <!--<h3>Add Client:</h3>-->
+
+    <form>
+        <table class="table-horizontal">
+            <tr>
+                <th>First Name</th>
+                <td><input class="form-border" type="text" ng-model="client.name.first"></td>
+            </tr>
+
+            <tr>
+                <th>Last Name</th>
+                <td><input class="form-border" type="text" ng-model="client.name.last"></td>
+            </tr>
+
+            <tr>
+                <th>Group</th>
+                <td><select class="form-border" ng-model="client.group._id" ng-change="refreshCustom(client.group._id)">
+                    <option ng-repeat="group in groups" value="{{group._id}}">{{group.name}}</option>
+                </select></td>
+            </tr>
+
+            <tr>
+                <th>DOB</th>
+                <td><input class="form-border" type="date"  ng-model="client.date.dob"></td>
+            </tr>
+
+            <tr ng-repeat="field in client.custom">
+                <th>{{field.name}}</th>
+                <td><input class="form-border" type="text" ng-model="field.value"></td>
+            </tr>
+
+
+        </table>
+    </form>
+</div>

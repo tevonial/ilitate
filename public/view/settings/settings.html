@@ -1,0 +1,25 @@
+<div class="col-md-10 content">
+    <h3>Group Name:</h3>
+
+    <input type="text" class="form-border" ng-model="group.name" />
+
+
+    <h3>Custom Properties:</h3>
+
+    <ul style="list-style: none; padding-left: 0">
+        <li ng-repeat="s in custom">
+            <!--<p class="form-border" style="display: inline-block" ng-bind="s.name"></p>-->
+            <input type="text" class="form-border" ng-model="s.name" />
+            <button class="form-border" ng-click="remove(s._id)">Remove</button>
+        </li>
+
+        <li ng-repeat="s in unsaved">
+            <input type="text" class="form-border" ng-model="s.name" />
+            <button class="form-border" ng-click="remove(s.i)">Remove</button>
+        </li>
+    </ul>
+
+    <button class="form-border" ng-click="add()">Add Property</button>
+
+
+</div>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ilitate</title>
+
+    <base href="/">
+
+    <!-- CSS -->
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">-->
+    <link rel="stylesheet" href="localdep/bootstrap-3.3.7-dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.3/css/bootstrap-select.min.css" />
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- JS -->
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>-->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.min.js"></script>-->
+    <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>-->
+    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>-->
+    <script src="localdep/angularjs_1.6.4.js"></script>
+    <script src="localdep/angular-ui-router_1.0.3.js"></script>
+    <script src="localdep/jquery_1.11.0.js"></script>
+    <script src="localdep/bootstrap_3.3.7.js"></script>
+
+    <script src="router.js"></script>
+
+    <script src="controller/main.js"></script>
+    <script src="controller/client.js"></script>
+    <script src="controller/note.js"></script>
+    <script src="controller/settings.js"></script>
+</head>
+
+
+<body ng-app="ilitate">
+
+    <!--=============================================================================================================-->
+    <!--NAV BAR-->
+    <!--=============================================================================================================-->
+
+    <div class="bar" ng-controller="nav" style="overflow: visible">
+        <div class="col-md-2 column">
+
+            <select id="groupSelect" class="form-control">
+                <option ng-repeat="group in groups" value="{{group._id}}">{{group.name}}</option>
+            </select>
+
+        </div>
+
+
+        <div class="flex-content">
+            <ul ui-view="child-nav" class="child-nav"></ul>
+        </div>
+    </div>
+
+    <!--=============================================================================================================-->
+    <!--MAIN-->
+    <!--=============================================================================================================-->
+
+    <div class="main" style="padding: 0">
+
+        <div class="col-md-2 column">
+            <ul class="vertical-list">
+                <li><a ng-class="{active:$state.includes('client')}" ui-sref="client.detail">Clients</a></li>
+                <li><a ui-sref-active="active" ui-sref="note">Notes</a></li>
+                <li><a ui-sref-active="active" ui-sref="calendar">Calendar</a></li>
+                <li><a ui-sref-active="active" ui-sref="settings">Group Settings</a></li>
+            </ul>
+        </div>
+
+        <div class="flex-content" style="padding: 0">
+            <div class="main" id="main" ui-view></div>
+        </div>
+    </div>
+
+</body>
+</html>

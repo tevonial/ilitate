@@ -1,0 +1,8 @@
+<div class="col-md-10 content" style="padding-top: 15px">
+    <table class="table table-horizontal table-border table-hover">
+        <tr ng-repeat="n in notes" ui-sref="note.detail({id: n._id})">
+            <th style="font-weight: normal">{{n.created | date}}</th>
+            <td>{{n.title}}</td>
+        </tr>
+    </table>
+</div>

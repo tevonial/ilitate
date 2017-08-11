@@ -1,0 +1,26 @@
+<div class="col-md-2 column" style="padding: 0">
+    <div class="list-group" style="padding: 0;">
+        <ul class="vertical-list">
+            <li ng-repeat="c in clients">
+                <a href="" id="client{{c._id}}" ng-click="selectClient(c._id)">{{c.name.first}} {{c.name.last}}</a>
+                <!--<a href="" id="client{{c._id}}" ui-sref="client.detail({id:c._id})">{{c.name.first}} {{c.name.last}}</a>-->
+            </li>
+        </ul>
+
+    </div>
+</div>
+
+
+<div class="col-md-8 content" style="padding: 0;" ng-show="client">
+    <ul class="tabs">
+        <li><a ui-sref-active="active" ui-sref="client.detail">Details</a></li>
+        <li><a ui-sref-active="active" ui-sref="client.contact">Contacts</a></li>
+        <li><a ui-sref-active="active" ui-sref="client.note">Notes</a></li>
+        <li><a ui-sref-active="active" ui-sref="client.file">Files</a></li>
+        <li><a>&nbsp;</a></li>
+    </ul>
+
+    <div style="padding: 15px;" ui-view></div>
+</div>
+
+

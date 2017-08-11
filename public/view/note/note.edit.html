@@ -1,0 +1,42 @@
+<div class="col-md-10 content">
+    <h3>General:</h3>
+
+    <table class="table-horizontal">
+        <tr>
+            <th>Title</th>
+            <td><input class="form-border" type="text" ng-model="note.title"></td>
+        </tr>
+
+        <tr>
+            <th>Content</th>
+            <td>
+                <!--<input class="form-border" type="text" ng-model="note.content">-->
+                <textarea class="form-border" rows="5" style="resize: none" ng-model="note.content"></textarea>
+            </td>
+        </tr>
+    </table>
+
+    <h3>Clients:</h3>
+
+    <ul style="list-style: none; padding-left: 0">
+        <li ng-repeat="client in note.clients">
+            <select ng-model="client.client._id" class="form-border" style="width: 250px">
+                <option ng-repeat="c in clients" value="{{c._id}}">{{c.name.first}} {{c.name.last}}</option>
+            </select>
+            <input type="text" class="form-border" ng-model="client.note" />
+            <button class="form-border" ng-click="remove(client.client._id)">Remove</button>
+        </li>
+
+        <li ng-repeat="client in unsaved">
+            <select ng-model="client.client._id" class="form-border" style="width: 250px">
+                <option ng-repeat="c in clients" value="{{c._id}}">{{c.name.first}} {{c.name.last}}</option>
+            </select>
+            <input type="text" class="form-border" ng-model="client.note" />
+            <button class="form-border" ng-click="remove(client.i)">Remove</button>
+        </li>
+    </ul>
+
+    <button class="form-border" ng-click="add()">Add Client</button>
+
+
+</div>

@@ -1,0 +1,7 @@
+<table class="table table-horizontal table-border table-hover" style="table-layout: fixed">
+    <tr ng-repeat="n in notes" ui-sref="note.detail({id: n._id})">
+        <th style="font-weight: normal">{{n.created | date}}</th>
+        <td>{{n.title}}</td>
+        <td>{{n.clients[0].note}}</td>
+    </tr>
+</table>

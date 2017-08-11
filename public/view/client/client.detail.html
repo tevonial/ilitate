@@ -1,0 +1,41 @@
+<table class="table table-horizontal table-border">
+    <tr>
+        <th>ID</th>
+        <td>{{client._id}}</td>
+    </tr>
+
+    <tr>
+        <th>Created</th>
+        <td>{{client.created | date:'medium'}}</td>
+    </tr>
+
+    <tr>
+        <th>Updated</th>
+        <td>{{client.updated | date:'medium'}}</td>
+    </tr>
+
+    <tr>
+        <th>First Name</th>
+        <td>{{client.name.first}}</td>
+    </tr>
+
+    <tr>
+        <th>Last Name</th>
+        <td>{{client.name.last}}</td>
+    </tr>
+
+    <tr>
+        <th>Group</th>
+        <td>{{client.group.name}}</td>
+    </tr>
+
+    <tr>
+        <th>DOB</th>
+        <td>{{client.date.dob | date}}</td>
+    </tr>
+
+    <tr ng-repeat="field in client.custom">
+        <th>{{field.name}}</th>
+        <td>{{field.value}}</td>
+    </tr>
+</table>

@@ -1,0 +1,50 @@
+<div class="col-md-10 content" style="padding-top: 15px">
+    <h3>General:</h3>
+
+    <table class="table table-horizontal table-border">
+        <tr>
+            <th>ID</th>
+            <td>{{note._id}}</td>
+        </tr>
+
+        <tr>
+            <th>Created</th>
+            <td>{{note.created | date:'medium'}}</td>
+        </tr>
+
+        <tr>
+            <th>Updated</th>
+            <td>{{note.updated | date:'medium'}}</td>
+        </tr>
+
+        <tr>
+            <th>Title</th>
+            <td>{{note.title}}</td>
+        </tr>
+
+        <tr>
+            <th>Content</th>
+            <td>{{note.content}}</td>
+        </tr>
+
+        <!--<tr>-->
+            <!--<th>Clients</th>-->
+            <!--<td>-->
+                <!--&lt;!&ndash;<ul>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<li ng-repeat="c in note.clients">&ndash;&gt;-->
+                        <!--&lt;!&ndash;{{c.client.name.first}} {{c.client.name.last}}&ndash;&gt;-->
+                    <!--&lt;!&ndash;</li>&ndash;&gt;-->
+                <!--&lt;!&ndash;</ul>&ndash;&gt;-->
+            <!--</td>-->
+        <!--</tr>-->
+    </table>
+
+    <h3>Clients:</h3>
+
+    <table class="table table-horizontal table-border">
+        <tr ng-repeat="c in note.clients">
+            <th>{{c.client.name.first}} {{c.client.name.last}}</th>
+            <td>{{c.note}}</td>
+        </tr>
+    </table>
+</div>
