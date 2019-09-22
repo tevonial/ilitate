@@ -128,7 +128,7 @@ angular.module("ilitate", ['ui.router'])
                 views: {
                     '': {
                         templateUrl:  'view/calendar/calendar.html',
-                        controller: 'note'
+                        controller: 'calendar'
                     },
                     'child-nav': {
                         templateUrl: 'view/calendar/calendar.nav.html'

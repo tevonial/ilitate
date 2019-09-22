@@ -1,3 +1,234 @@
 <div class="col-md-10 content">
-==MAIN CALENDAR==
+    <style>
+
+        /* The grid */
+        .day-of-week,
+        .date-grid {
+
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+        }
+
+        .date-grid {
+            height: 600px;
+            position: relative;
+        }
+
+        .date-grid div {
+            display: inline-block;
+            height: 100%;
+            border-right: 1px solid black;
+            border-bottom: 1px solid black;
+            background-color: #ffffff;
+        }
+
+        .date-grid {
+            border-left: 1px solid black;
+            border-top: 1px solid black;
+        }
+
+        .date-grid div:first-child {
+            grid-column: 0;
+        }
+    </style>
+
+    <div class="calendar">
+        <div class="month-indicator">Month</div>
+        <div class="day-of-week">
+            <div>Su</div>
+            <div>Mo</div>
+            <div>Tu</div>
+            <div>We</div>
+            <div>Th</div>
+            <div>Fr</div>
+            <div>Sa</div>
+        </div>
+
+        <div id="grid" class="date-grid">
+            <div ng-repeat="day in month.days">{{day.label}}</div>
+        </div>
+    </div>
+
+
+
+
+
+    <!--<style>
+        .calendar {box-sizing: border-box;}
+        .calendar ul {list-style-type: none;}
+        .calendar {font-family: Verdana, sans-serif;}
+
+        .month {
+            padding: 70px 25px;
+            width: 100%;
+            background: #1abc9c;
+            text-align: center;
+        }
+
+        .month ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        .month ul li {
+            color: white;
+            font-size: 20px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .month .prev {
+            float: left;
+            padding-top: 10px;
+        }
+
+        .month .next {
+            float: right;
+            padding-top: 10px;
+        }
+
+        .weekdays {
+            margin: 0;
+            padding: 10px 0;
+            background-color: #ddd;
+        }
+
+        .weekdays li {
+            display: inline-block;
+            width: 13.6%;
+            color: #666;
+            text-align: center;
+        }
+
+        .days {
+            padding: 10px 0;
+            background: #eee;
+            margin: 2px;
+        }
+
+        .days li {
+            list-style-type: none;
+            display: inline-block;
+            width: 13.6%;
+            text-align: center;
+            margin-bottom: 5px;
+            font-size:12px;
+            color: #777;
+        }
+
+        .days li div {
+            padding: 10px;
+            background-color: #3e8f3e;
+        }
+
+        .days li .active {
+            padding: 5px;
+            background: #1abc9c;
+            color: white !important
+        }
+
+        /* Add media queries for smaller screens */
+        @media screen and (max-width:720px) {
+            .weekdays li, .days li {width: 13.1%;}
+        }
+
+        @media screen and (max-width: 420px) {
+            .weekdays li, .days li {width: 12.5%;}
+            .days li .active {padding: 2px;}
+        }
+
+        @media screen and (max-width: 290px) {
+            .weekdays li, .days li {width: 12.2%;}
+        }
+    </style>
+    <div class="calendar">
+
+    <div class="month">
+        <ul>
+            <li class="prev">&#10094;</li>
+            <li class="next">&#10095;</li>
+            <li>
+                August<br>
+                <span style="font-size:18px">2017</span>
+            </li>
+        </ul>
+    </div>
+
+    <ul class="weekdays">
+        <li>Mo</li>
+        <li>Tu</li>
+        <li>We</li>
+        <li>Th</li>
+        <li>Fr</li>
+        <li>Sa</li>
+        <li>Su</li>
+    </ul>
+
+    <ul class="days">
+        <li><div style="box-sizing: border-boxborder: 3px green">1</div></li>
+        <li><div>2</div></li>
+        <li><div>3</div></li>
+        <li><div>4</div></li>
+        <li><div>5</div></li>
+        <li><div>6</div></li>
+        <li><div>7</div></li>
+        <li><div>8</div></li>
+        <li><div>9</div></li>
+        <li><div>10</div></li>
+        <li><div>10</div></li>
+        <li><div>11</div></li>
+        <li><div>12</div></li>
+        <li><div>13</div></li>
+        <li><div>14</div></li>
+        <li><div>15</div></li>
+        <li><div>16</div></li>
+        <li><div>17</div></li>
+        <li><div>18</div></li>
+        <li><div>19</div></li>
+        <li><div>20</div></li>
+        <li><div>21</div></li>
+        <li><div>22</div></li>
+        <li><div>23</div></li>
+        <li><div>24</div></li>
+        <li><div>25</div></li>
+        <li><div>26</div></li>
+        <li><div>27</div></li>
+        <li><div>28</div></li>
+        <li><div>29</div></li>
+        <li><div>30</div></li>
+        <li><div>31</div></li>
+
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+        <li><span class="active">10</span></li>
+        <li>11</li>
+        <li>12</li>
+        <li>13</li>
+        <li>14</li>
+        <li>15</li>
+        <li>16</li>
+        <li>17</li>
+        <li>18</li>
+        <li>19</li>
+        <li>20</li>
+        <li>21</li>
+        <li>22</li>
+        <li>23</li>
+        <li>24</li>
+        <li>25</li>
+        <li>26</li>
+        <li>27</li>
+        <li>28</li>
+        <li>29</li>
+        <li>30</li>
+        <li>31</li>
+    </ul>
+</div>-->
+
 </div>
